@@ -54,6 +54,7 @@ Puppet::Type.type(:logical_volume).provide :lvm do
 
         if @resource[:alloc]
             args.push('--alloc', @resource[:alloc])
+        end
 
 
         if @resource[:readahead]
@@ -238,4 +239,5 @@ Puppet::Type.type(:logical_volume).provide :lvm do
     def vgpath
         "/dev/#{@resource[:volume_group]}"
     end
+    
 end
